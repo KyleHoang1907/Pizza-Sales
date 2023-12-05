@@ -1,10 +1,10 @@
 # Pizza-Sales
 # Introduction
-  1.1	Problem statement
-  ## The pizza store is a newly opened store but is also the best-selling food store in the market, the number of orders increases day by day. Every second, order data is constantly updated, so store owners cannot control the data with conventional paper methods. They have data analysts come up with KPI's requirement indicators and create charts that make the data more listener-friendly. The main aim is to focus on the types of products that sell well and point out the less popular pizzas in order to increase sales and reduce materials for less efficient products 
+  ## 1.1	Problem statement
+  ### The pizza store is a newly opened store but is also the best-selling food store in the market, the number of orders increases day by day. Every second, order data is constantly updated, so store owners cannot control the data with conventional paper methods. They have data analysts come up with KPI's requirement indicators and create charts that make the data more listener-friendly. The main aim is to focus on the types of products that sell well and point out the less popular pizzas in order to increase sales and reduce materials for less efficient products 
   ## Required indicators: Total revenue, Average order value, total pizzas sold, total orders and Average pizzas per order
-  1.2	Dataset
-    The dataset is under the name Pizza Sales with a total of 4 tables with 48,620 records and 12 fields.
+  ## 1.2	Dataset
+      The dataset is under the name Pizza Sales with a total of 4 tables with 48,620 records and 12 fields.
  - Order Details
 The table has the order_details_id which is the primary key of the table along with the order_id, pizza_id as the foreign key of the orders and pizzas table and last, we have the quantity column of each type of pizza.
  - Orders
