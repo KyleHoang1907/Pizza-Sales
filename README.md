@@ -5,13 +5,13 @@
   #### Required indicators: Total revenue, Average order value, total pizzas sold, total orders and Average pizzas per order
   ## 1.2	Dataset
       The dataset is under the name Pizza Sales with a total of 4 tables with 48,620 records and 12 fields.
- - Order Details
+ - Order Details:
 The table has the order_details_id which is the primary key of the table along with the order_id, pizza_id as the foreign key of the orders and pizzas table and last, we have the quantity column of each type of pizza.
- - Orders
+ - Orders:
 This table includes the order_id which is the primary key, and the date and time of each order.
- - Pizza Types
+ - Pizza Types:
 We have the pizza_type_id as the primary key, along with each pizza's name, category and ingredients.
- - Pizzas
+ - Pizzas:
 The pizzas table has the pizza_id as the primary key, and the pizza_type_id as the foreign key from the pizza types table, it also includes the size and price of the pizzas. 
 # Insights 
 ### A. KPI’s
