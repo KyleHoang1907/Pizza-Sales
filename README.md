@@ -1,8 +1,8 @@
 # Pizza-Sales
 # Introduction
   ## 1.1	Problem statement
-  ### The pizza store is a newly opened store but is also the best-selling food store in the market, the number of orders increases day by day. Every second, order data is constantly updated, so store owners cannot control the data with conventional paper methods. They have data analysts come up with KPI's requirement indicators and create charts that make the data more listener-friendly. The main aim is to focus on the types of products that sell well and point out the less popular pizzas in order to increase sales and reduce materials for less efficient products 
-  ## Required indicators: Total revenue, Average order value, total pizzas sold, total orders and Average pizzas per order
+  #### The pizza store is a newly opened store but is also the best-selling food store in the market, the number of orders increases day by day. Every second, order data is constantly updated, so store owners cannot control the data with conventional paper methods. They have data analysts come up with KPI's requirement indicators and create charts that make the data more listener-friendly. The main aim is to focus on the types of products that sell well and point out the less popular pizzas in order to increase sales and reduce materials for less efficient products 
+  #### Required indicators: Total revenue, Average order value, total pizzas sold, total orders and Average pizzas per order
   ## 1.2	Dataset
       The dataset is under the name Pizza Sales with a total of 4 tables with 48,620 records and 12 fields.
  - Order Details
@@ -14,57 +14,57 @@ We have the pizza_type_id as the primary key, along with each pizza's name, cate
  - Pizzas
 The pizzas table has the pizza_id as the primary key, and the pizza_type_id as the foreign key from the pizza types table, it also includes the size and price of the pizzas. 
 # Insights 
-A. KPI’s
-1. Total Revenue:
+### A. KPI’s
+#### 1. Total Revenue:
 SELECT SUM(total_price) AS Total_Revenue FROM pizza_sales;
-2. Average Order Value
+#### 2. Average Order Value
 SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM
 pizza_sales
-3. Total Pizzas Sold
+#### 3. Total Pizzas Sold
 SELECT SUM(quantity) AS Total_pizza_sold FROM pizza_sales
-4. Total Orders
+#### 4. Total Orders
 SELECT COUNT(DISTINCT order_id) AS Total_Orders FROM pizza_sales
-5. Average Pizzas Per Order
+#### 5. Average Pizzas Per Order
 SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) /
 CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2))
 AS Avg_Pizzas_per_order
 FROM pizza_sales
-B. Daily Trend for Total Orders
+### B. Daily Trend for Total Orders
 SELECT DATENAME(DW, order_date) AS order_day, COUNT(DISTINCT order_id) AS
 total_orders 
 FROM pizza_sales
 GROUP BY DATENAME(DW, order_date)
-C. Hourly Trend for Orders
+### C. Hourly Trend for Orders
 SELECT DATEPART(HOUR, order_time) as order_hours, COUNT(DISTINCT order_id) as
 total_orders
 from pizza_sales
 group by DATEPART(HOUR, order_time)
 order by DATEPART(HOUR, order_time)
-D. % of Sales by Pizza Category
+### D. % of Sales by Pizza Category
 SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
 CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS
 DECIMAL(10,2)) AS PCT
 FROM pizza_sales
 GROUP BY pizza_category
-E. % of Sales by Pizza Size
+### E. % of Sales by Pizza Size
 SELECT pizza_size, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
 CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS
 DECIMAL(10,2)) AS PCT
 FROM pizza_sales
 GROUP BY pizza_size
 ORDER BY pizza_size
-F. Total Pizzas Sold by Pizza Category
+### F. Total Pizzas Sold by Pizza Category
 SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold
 FROM pizza_sales
 WHERE MONTH(order_date) = 2
 GROUP BY pizza_category
 ORDER BY Total_Quantity_Sold DESC
-G. Top 5 Best Sellers by Total Pizzas Sold
+### G. Top 5 Best Sellers by Total Pizzas Sold
 SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
 FROM pizza_sales
 GROUP BY pizza_name
 ORDER BY Total_Pizza_Sold DESC
-H. Bottom 5 Best Sellers by Total Pizzas Sold
+### H. Bottom 5 Best Sellers by Total Pizzas Sold
 SELECT TOP 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
 FROM pizza_sales
 GROUP BY pizza_name
