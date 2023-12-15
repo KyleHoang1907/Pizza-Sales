@@ -1,5 +1,8 @@
 # Pizza-Sales
 # Introduction
+Analyze key metrics of pizza sales data to understand the business situation and customer needs. Use SQL Server to query data then use Excel as a data visualization tool.
+### Skills: data cleaning, pivot table, window function, data analysis, data visualization, problem solving.
+
   ## 1.1	Problem statement
   #### The pizza store is a newly opened store but is also the best-selling food store in the market, the number of orders increases day by day. Every second, order data is constantly updated, so store owners cannot control the data with conventional paper methods. They have data analysts come up with KPI's requirement indicators and create charts that make the data more listener-friendly. The main aim is to focus on the types of products that sell well and point out the less popular pizzas in order to increase sales and reduce materials for less efficient products 
   #### Required indicators: Total revenue, Average order value, total pizzas sold, total orders and Average pizzas per order
